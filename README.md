@@ -35,6 +35,7 @@ If you encounter a message such as `text section exceeds available space in boar
 
 如出现 `text section exceeds available space in board` 错误，可在 **Tools** 菜单中把 *Partition Scheme* 设置为 `Huge APP` 或其他更大的选项。
 
+
 ### ESP‑IDF
 1. Open the folder `ESP-IDF/ESP32-S3-Touch-LCD-2.8C-Test` in VS Code with the ESP‑IDF extension installed.
 2. Run `idf.py -p PORT build flash monitor` to build and flash the firmware.
