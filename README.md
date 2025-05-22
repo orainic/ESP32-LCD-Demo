@@ -14,17 +14,20 @@ This repository provides demo code and firmware for the ESP32-S3 Touch LCD 2.8" 
 
 ### Arduino
 1. Open `Arduino/examples/LVGL_Arduino` in the Arduino IDE.
-2. Install the libraries located under `Arduino/libraries` if required.
-3. Compile and upload the sketch to your board.
-4. If compilation fails because `lv_conf.h` cannot be found, copy it from
-   `Arduino/libraries/lvgl/src` into your sketchbook directory and restart the
-   IDE.
+2. Copy the contents of `Arduino/libraries` to your Arduino sketchbook's `libraries` folder (e.g. `Documents/Arduino/libraries`) and remove any `lvgl` library installed via the Library Manager.
+3. If compilation reports missing `lv_conf.h` or `demos/lv_demos.h`, copy `Arduino/libraries/lvgl/src/lv_conf.h` to your sketchbook root.
+4. Compile and upload the sketch to your board.
+
 
 ### ESP‑IDF
 1. Open the folder `ESP-IDF/ESP32-S3-Touch-LCD-2.8C-Test` in VS Code with the ESP‑IDF extension installed.
 2. Run `idf.py -p PORT build flash monitor` to build and flash the firmware.
 
 If compilation fails after a successful build, re-extract the project and try again.
+
+## License
+
+The code in this repository is licensed under its respective source files. Refer to the headers inside the project for more details.
 
 --------------------------------------
 
@@ -52,7 +55,3 @@ If compilation fails after a successful build, re-extract the project and try ag
 2. 执行 `idf.py -p PORT build flash monitor` 编译并烧录。
 
 若首次编译成功后出现编译失败，可重新解压项目后再试。
-
-## License
-
-The code in this repository is licensed under its respective source files. Refer to the headers inside the project for more details.
