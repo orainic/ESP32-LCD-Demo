@@ -14,9 +14,26 @@ This repository provides demo code and firmware for the ESP32-S3 Touch LCD 2.8" 
 
 ### Arduino
 1. Open `Arduino/examples/LVGL_Arduino` in the Arduino IDE.
-2. Copy the contents of `Arduino/libraries` to your Arduino sketchbook's `libraries` folder (e.g. `Documents/Arduino/libraries`) and remove any `lvgl` library installed via the Library Manager.
-3. If compilation reports missing `lv_conf.h` or `demos/lv_demos.h`, copy `Arduino/libraries/lvgl/src/lv_conf.h` to your sketchbook root.
-4. Compile and upload the sketch to your board.
+2. Install the libraries located under `Arduino/libraries` if required.
+3. Compile and upload the sketch to your board.
+
+## Installing the Bundled Arduino Libraries
+
+1. **Remove any LVGL library installed via the Library Manager.**
+2. Copy `Arduino/libraries/lvgl` from this repository to your `Documents/Arduino/libraries/` folder.
+3. Copy `Arduino/libraries/lvgl/src/lv_conf.h` into the same folder (next to `lvgl`).
+4. Restart the Arduino IDE.
+
+If you encounter a message such as `text section exceeds available space in board`, choose a larger *Partition Scheme* from the **Tools** menu (for example, `Huge APP`).
+
+### Arduino库的安装
+
+1. **删除通过 Library Manager 安装的 LVGL 库。**
+2. 将本仓库的 `Arduino/libraries/lvgl` 文件夹复制到 `Documents/Arduino/libraries/`。
+3. 把 `Arduino/libraries/lvgl/src/lv_conf.h` 复制到同一目录，与 `lvgl` 文件夹同级。
+4. 重新启动 Arduino IDE。
+
+如出现 `text section exceeds available space in board` 错误，可在 **Tools** 菜单中把 *Partition Scheme* 设置为 `Huge APP` 或其他更大的选项。
 
 
 ### ESP‑IDF
@@ -28,30 +45,3 @@ If compilation fails after a successful build, re-extract the project and try ag
 ## License
 
 The code in this repository is licensed under its respective source files. Refer to the headers inside the project for more details.
-
---------------------------------------
-
-## 中文说明
-
-本仓库为 ESP32‑S3 触摸屏 LCD 2.8 吋的示例代码和固件，包含 Arduino 与 ESP‑IDF 两种示例。
-
-### 目录结构
-- **Arduino/**：Arduino 示例及编译所需库
-  - `examples/`：可直接编译的 Arduino 示例
-  - `libraries/`：本工程使用的 LVGL 等库
-- **ESP-IDF/**：可在 VS Code 中打开的 ESP‑IDF 工程
-- **Firmware/**：使用 `flash_download_tool_3.9.5` 在地址 `0x00` 烧录的固件
-
-### 编译示例
-
-#### Arduino
-1. 在 Arduino IDE 打开 `Arduino/examples/LVGL_Arduino`。
-2. 如有需要，将 `Arduino/libraries` 下的库复制到 IDE 的 `libraries` 目录。
-3. 编译并上传到开发板。
-4. 如果提示找不到 `lv_conf.h`，请从 `Arduino/libraries/lvgl/src` 复制该文件到你的草稿目录根目录并重启 IDE。
-
-#### ESP‑IDF
-1. 在已安装 ESP‑IDF 扩展的 VS Code 中打开 `ESP-IDF/ESP32-S3-Touch-LCD-2.8C-Test`。
-2. 执行 `idf.py -p PORT build flash monitor` 编译并烧录。
-
-若首次编译成功后出现编译失败，可重新解压项目后再试。
