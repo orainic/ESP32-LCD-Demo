@@ -14,8 +14,11 @@ This repository provides demo code and firmware for the ESP32-S3 Touch LCD 2.8" 
 
 ### Arduino
 1. Open `Arduino/examples/LVGL_Arduino` in the Arduino IDE.
-2. Install the libraries located under `Arduino/libraries` if required.
-3. Compile and upload the sketch to your board.
+2. Copy `Arduino/libraries/lvgl/src/lv_conf.h` to your Arduino sketchbook root (e.g. `Documents/Arduino/lv_conf.h`).
+   This allows the LVGL library to locate its configuration file.
+3. Copy the folders under `Arduino/libraries` into your `Documents/Arduino/libraries` directory and remove any LVGL version installed via the Library Manager.
+4. Compile and upload the sketch to your board.
+
 
 ### ESP‑IDF
 1. Open the folder `ESP-IDF/ESP32-S3-Touch-LCD-2.8C-Test` in VS Code with the ESP‑IDF extension installed.
