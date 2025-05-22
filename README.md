@@ -26,6 +26,8 @@ This repository provides demo code and firmware for the ESP32-S3 Touch LCD 2.8" 
 
 If compilation fails after a successful build, re-extract the project and try again.
 
+--------------------------------------
+
 ## 中文说明
 
 本仓库为 ESP32‑S3 触摸屏 LCD 2.8 吋的示例代码和固件，包含 Arduino 与 ESP‑IDF 两种示例。
